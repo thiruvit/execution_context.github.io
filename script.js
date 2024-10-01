@@ -1,51 +1,48 @@
 
 var firstMessage="Hi";
 var lastMessage=" everyone";
-var message=firstMessage+lastMessage;
 
 function getMessage() {
-    console.log("Message: " +message);
+    console.log("Message: " +firstMessage);
 }
 getMessage();
+var message=firstMessage+lastMessage;
+console.log(message);
 
 
 //Global Execution Context
 
 //Creation Phase
 
-GEC{
-    LEC{
-        ER{
-           declaration:
+GEC:{
+    LEC:{
+        ER:{
                firstMessage:undefined;
                lastMessage:undefined;
         }
         outer:null;
-        this:window Object;
+        this:window Object;``
     }
-    VE{
-        ER{
-            declaration:
+    VE:{
+        ER:{
                 message:undefined;
         }
     }
 }
 //Execution Phase
 
-GEC{
-    LEC{
-        ER{
-           declaration:
-               firstMessage:"hi";
+GEC:{
+    LEC:{
+        ER:{
+               firstMessage:"Hi";
                lastMessage:"everyone";
         }
         outer:null;
         this:window Object;
     }
-    VE{
-        ER{
-            declaration:
-                 message:firstMessage+lastMessage;
+    VE:{
+        ER:{
+                 message:Hi everyone;
         }
     }
 }
@@ -54,25 +51,26 @@ GEC{
 
 //Creation Phase
 
-GEC{
-    LEC{
-        ER{
-            declaration:
-                 message:undefined;
+GEC:{
+    LEC:{
+        ER:{
+
+                 firstMessage:undefined;
         }
         outer:GEC;
-        this.getMessage;
+        this:window Object;
     }
 }
 
 //Execution Phase
 
-GEC{
-    LEC{
-        ER{
-            declaration:
-                  message:Hi everyone;
+GEC:{
+    LEC:{
+        ER:{
+                  firstMessage:Hi;
         }
+        outer:GEC;
+        this:window Object;
     }
 }
 
