@@ -8,9 +8,10 @@ function getMessage() {
 }
 getMessage();
 
+
 //Global Execution Context
 
-Creation Phase
+//Creation Phase
 
 GEC{
     LEC{
@@ -29,7 +30,7 @@ GEC{
         }
     }
 }
-Execution Phase
+//Execution Phase
 
 GEC{
     LEC{
@@ -49,9 +50,9 @@ GEC{
     }
 }
 
-Function Execution Phase
+//Function Execution Context
 
-Creation Phase
+//Creation Phase
 
 GEC{
     LEC{
@@ -64,7 +65,7 @@ GEC{
     }
 }
 
-Execution Phase
+//Execution Phase
 
 GEC{
     LEC{
@@ -74,5 +75,6 @@ GEC{
         }
     }
 }
+
 
 
