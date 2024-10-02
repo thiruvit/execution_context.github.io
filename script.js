@@ -28,12 +28,19 @@ CREATION PHASE
 GlobalExecutionContext={
    LexicalEnvironment:{
      EnvironmentRecord:{
-        name : undefined,(Declarative)
-        role :declared but not initialized.(Declarative)
-        function:CoffeeShop();(Object)
+        Type:"Object",
+        name : undefined,
+        role :undefined
      },
      outer: null
      ThisBinding: window object
+    },
+    VariableEnvironment:{
+     EnvironmentRecord:{
+        Type:"Object"
+     },
+     outer:null,
+     ThisBinding:window object
     }
 }
 
@@ -42,12 +49,19 @@ EXECUTION PHASE
 GlobalExecutionContext={
     LexicalEnvironment:{
       EnvironmentRecord:{
-         name : "Thiru"
+         Type:"Object",
+         name : "Thiru",
          role : "Coffee Shop Manager"
-         function:CoffeeShop();
       },
       outer: null
       ThisBinding: window object
+    },
+    VariableEnvironment:{
+     EnvironmentRecord:{
+        Type:"Object"
+     },
+     outer:null,
+     ThisBinding:window object
     }
 }
 
@@ -60,14 +74,20 @@ CREATION PHASE
 FunctionExecutionContext={
    LexicalEnvironment:{
      EnvironmentRecord:{
-        shopName : declared but not initialized.(declarative)
-        menu : declared but not initialized.(object)
-        employeeProfile : declared but not initialized.(object)
-        function:dailySales() (object)
+        Type:"Declarative"
+        shopName : undefined,
+        menu : undefined,
+        employeeProfile : undefined(object)
      },
      outer: GlobalExecutionContext
      ThisBinding: CoffeeShop()
-    }
+    },
+    VariableEnvironment:{
+     EnvironmentRecord:{
+        Type:"Declarative"
+     },
+     outer:GlobalExecutionContext,
+     ThisBinding: CoffeeShop()
 }
 
 
@@ -76,15 +96,20 @@ EXECUTION PHASE
 FunctionExecutionContext={
    LexicalEnvironment:{
      EnvironmentRecord:{
-        shopName : "Cafe Wild Beans" (declarative)
-        menu :["Espresso", "Latte", "Cappuccino"] (object)
-        employeeProfile : "Thiru - Coffee Shop Manager" (object)
-        console.log(employeeProfile); // output "Thiru - Coffee Shop Manager"
-        function:dailySales() (object)
+        Type:"Declarative",
+        shopName : "Cafe Wild Beans" ,
+        menu :["Espresso", "Latte", "Cappuccino"] ,
+        employeeProfile : "Thiru - Coffee Shop Manager" 
      },
      outer: GlobalExecutionContext
      ThisBinding: CoffeeShop()
-    }
+    },
+    VariableEnvironment:{
+     EnvironmentRecord:{
+        Type:"Declarative"
+     },
+     outer:GlobalExecutionContext,
+     ThisBinding: CoffeeShop()
 }
 
 
@@ -96,12 +121,19 @@ CREATION PHASE
 FunctionExecutionContext={
    LexicalEnvironment:{
      EnvironmentRecord:{
-        cupsSold : declared but not initialized. (declarative)
-        averagePrice : declared but not initialized. (declarative)
+        Type="Declarative",
+        cupsSold : not defined,
+        averagePrice : not defined
      },
-     outer: CoffeeShop() Execution Context
+     outer: CoffeeShop() 
      ThisBinding: dailySales()
-    }
+    },
+    VariableEnvironment:{
+     EnvironmentRecord:{
+        Type:"Declarative"
+     },
+     outer: CoffeeShop(),
+     ThisBinding: dailySales()
 }
 
 EXECUTION PHASE
@@ -109,13 +141,19 @@ EXECUTION PHASE
 FunctionExecutionContext={
    LexicalEnvironment:{
      EnvironmentRecord:{
-        cupsSold : "50"  (declarative)
-        averagePrice : "4"  (declarative)
-        console.log(cupsSold * averagePrice); // outputs 200
+        Type:"Declarative",
+        cupsSold : "50",
+        averagePrice : "4",
      },
-     outer: CoffeeShop() Execution Context
+     outer: CoffeeShop(),
      ThisBinding: dailySales()
-    }
+    },
+    VariableEnvironment:{
+     EnvironmentRecord:{
+        Type:"Declarative"
+     },
+     outer: CoffeeShop(),
+     ThisBinding: dailySales()
 }
 
 */
